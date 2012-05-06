@@ -9,12 +9,12 @@
   ================================================== -->
 	<meta charset="utf-8">
 	<title>Vampiroscope</title>
-    <meta name="author" content="Christophe Desguez, Eidolon Labs">
+	<meta name="author" content="Christophe Desguez, Eidolon Labs">
 
 	<meta name="description" lang="en" content="Web site of photograph, web designer Aleiter Crowlaid, aka Christophe Desguez">
 
-    <meta name="keywords" content="photography">
-    <meta name="robots" content="noindex, nofollow">
+	<meta name="keywords" content="photography">
+	<meta name="robots" content="noindex, nofollow">
 
 	<!-- Mobile Specific Metas
   ================================================== -->
@@ -23,37 +23,37 @@
 	<!-- CSS
   ================================================== -->
 	<link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/vampir.css">
+	<link rel="stylesheet" href="css/vampir.css">
 
-    <!-- JS SCRIPT LOADER see http://headjs.com/ -->
-    <script src="js/head.load.min.js"></script>
+	<!-- JS SCRIPT LOADER see http://headjs.com/ -->
+	<script src="js/head.load.min.js"></script>
 
-    <script>
-        /* Load scripts in paralell but execute them sequentially */
-        head.js("http://code.jquery.com/jquery-1.7.1.min.js",
-                "js/jquery.backstretch.min.js",
-                "http://wufoo.com/scripts/embed/form.js",
-                function loaded() {
-                    $.backstretch("images/vampir-logo.png", {speed: 500});
+	<script>
+		/* Load scripts in parallel but execute them sequentially */
+		head.js("http://code.jquery.com/jquery-1.7.1.min.js",
+				"js/jquery.backstretch.min.js",
+				"http://wufoo.com/scripts/embed/form.js",
+				function loaded() {
+					$.backstretch("images/vampir-logo.png", {speed: 500});
 
-                    var z7x3x5;
+					var z7x3x5;
 
-                    try {
-                        z7x3x5 = new WufooForm();
-                        z7x3x5.initialize({
-                            'userName':'acrowlaid',
-                            'formHash':'z7x3x5',
-                            'autoResize':true,
-                            'height':'436',
-                            'async':true,
-                            'header':'show'});
-                        z7x3x5.display();
-                    } catch (e) {
-                        console.error(e);
-                    }
+					try {
+						z7x3x5 = new WufooForm();
+						z7x3x5.initialize({
+							'userName':'acrowlaid',
+							'formHash':'z7x3x5',
+							'autoResize':true,
+							'height':'436',
+							'async':true,
+							'header':'show'});
+						z7x3x5.display();
+					} catch (e) {
+						console.error(e);
+					}
 
-                });
-    </script>
+				});
+	</script>
 
 
 	<!-- Favicons
@@ -63,33 +63,33 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
-    <style>
-        #wufoo-z7x3x5 {
-            margin: 1em 20%;
-        }
-    </style>
+	<style>
+		#wufoo-z7x3x5 {
+			margin: 1em 20%;
+		}
+	</style>
 </head>
 
 <body>
 
 	<!-- Primary Page Layout
 	================================================== -->
-    <header id="header">
-        <hgroup id="title">
-            <h1>VAMPIROSCOPE</h1>
-            <h2>the Photographic Works of Aleister Crowlaid</h2>
-        </hgroup>
-        <nav id="main">
+	<header id="header">
+		<hgroup id="title">
+			<h1>VAMPIROSCOPE</h1>
+			<h2>the Photographic Works of Aleister Crowlaid</h2>
+		</hgroup>
+		<nav id="main">
 
-            <a href="index.html">Galleries</a>
-            <a href="about.html">Curriculum Vitae</a>
-            <a class="selected" href="contact.html">Contact</a>
+			<a href="index.html">Galleries</a>
+			<a href="about.html">Curriculum Vitae</a>
+			<a class="selected" href="contact.html">Contact</a>
 
-        </nav>
-    </header>
+		</nav>
+	</header>
 
-    <div id="wufoo-z7x3x5">
-    </div>
+	<div id="wufoo-z7x3x5">
+	</div>
 <!-- End Document
 ================================================== -->
 </body>
