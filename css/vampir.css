@@ -1,0 +1,109 @@
+
+
+@font-face {
+    font-family: 'CreatureRegular';
+    src: url('../fonts/creature/creature-wf.eot');
+    src: url('../fonts/creature/creature-wf.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/creature/creature-wf.woff') format('woff'),
+    url('../fonts/creature/creature-wf.ttf') format('truetype'),
+    url('../fonts/creature/creature-wf.svg#CreatureRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PlasticNo28Regular';
+    src: url('../fonts/plastic/plastic-wf.eot');
+    src: url('../fonts/plastic/plastic-wf.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/plastic/plastic-wf.woff') format('woff'),
+    url('../fonts/plastic/plastic-wf.ttf') format('truetype'),
+    url('../fonts/plastic/plastic-wf.svg#PlasticNo28Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    height: 100%;
+
+}
+
+header {
+    margin-top: 5px;
+    padding: 20px 0;
+    background-image: url(../images/leather-bckgd-tile.png);
+    background-repeat: repeat-x;
+    border-top: 2px solid #758334;
+    border-bottom: 2px solid #758334;
+}
+header * {
+    font-family: 'CreatureRegular';
+}
+header h1 { color: #9F190E; font-size: 64px; line-height: 70px; margin-bottom: 14px;}
+header h2, header a { color: #2A4549; font-size: 48px; line-height: 50px; margin-bottom: 10px; }
+
+header:after, #main:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+#title {
+    float: left; display: inline;
+    margin-left: 2em;
+    width: 30%;
+}
+#main {
+    float: left; display: inline;
+    padding-top: 84px;
+    margin-left: 2em;
+    font-size: 28px; line-height: 34px;
+}
+#main a {
+    display: inline;
+    margin-right: 2em;
+    text-decoration: none;
+}
+#main a.selected, #main a:hover, #main a:focus {
+    text-decoration: underline;
+    color: #1A4563;
+}
+
+header.hidden h2 { opacity: 0; }
+header.hidden nav#main { display: none; }
+header.hidden { background-image: none; border: none; margin: 7px 0 2px;}
+
+
+@media only screen and (max-width: 1200px) {
+
+    #main {
+        padding-top: 0;
+    }
+    #main a {
+        display: block;
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #title {
+        width: 50%;
+    }
+}
+
+#menu {
+    z-index: 100;
+    margin: 2em;
+}
+#menu * {
+    font-family: 'PlasticNo28Regular';
+}
+#menu h1 {
+    color: #758334; font-size: 64px; line-height: 70px; margin-bottom: 14px;
+}
+#menu h3 {
+    color: #2A4549; font-size: 48px; line-height: 50px; margin-bottom: 2px;
+}
+#menu a.active {
+    color: #87cefa;
+}
+
+#backstretch iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

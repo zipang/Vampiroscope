@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en, fr"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en, fr"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en, fr"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en, fr"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Vampiroscope</title>
+    <meta name="author" content="Christophe Desguez, Eidolon Labs">
+
+	<meta name="description" lang="en" content="Web site of photograph, web designer Aleiter Crowlaid, aka Christophe Desguez">
+
+    <meta name="keywords" content="photography">
+    <meta name="robots" content="noindex, nofollow">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vampir.css">
+
+    <!-- JS SCRIPT LOADER see http://headjs.com/ -->
+    <script src="js/head.load.min.js"></script>
+
+    <script>
+        /* Load scripts in paralell but execute them sequentially */
+        head.js("http://code.jquery.com/jquery-1.7.1.min.js",
+                "js/jquery.backstretch.min.js",
+                "js/jquery.flickr.vampirama.1.0.0.js",
+                "js/jquery.hotkeys.js",
+                "js/ICanHaz.min.js",
+                "js/vampiroscope.js");
+    </script>
+
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+
+<body>
+
+	<!-- Primary Page Layout
+	================================================== -->
+    <header id="header">
+        <hgroup id="title">
+            <h1>VAMPIROSCOPE</h1>
+            <h2>the Photographic Works of Aleister Crowlaid</h2>
+        </hgroup>
+        <nav id="main">
+
+            <a class="selected" href="index.html">Galleries</a>
+            <a href="about.html">Curriculum Vitae</a>
+            <a href="contact.html">Contact</a>
+
+        </nav>
+    </header>
+
+    <nav id="menu">
+        <h1>Galleries Photo</h1>
+
+        <h3><a class="diaporama" href="#punkrockcity">Punk Rock City</a></h3>
+        <h3><a class="diaporama" href="#dreams">Only in Dreams</a></h3>
+        <h3><a class="diaporama" href="#citylights">City Lights</a></h3>
+        <h3><a class="diaporama" href="#nightride">Night Ride</a></h3>
+
+        <h1>Vidéos</h1>
+
+        <h3><a class="video" href="http://vimeo.com/39271691">Demi Mondaine @ La Féline</a></h3>
+        <h3><a class="video" href="http://vimeo.com/40931848">Warum Joe @ La Miroiterie</a></h3>
+        <h3><a class="video" href="http://vimeo.com/40806453">Joe Sent Me @ La Miroiterie</a></h3>
+        <h3><a class="video" href="http://vimeo.com/31608648">Guitar Wolf @ La Flêche d'Or</a></h3>
+        <h3><a class="video" href="http://vimeo.com/37467832">The Pupils @ La Miroiterie</a></h3>
+        <h3><a class="video" href="http://vimeo.com/19789372">You Do Right @ Chateau d'Albatard</a></h3>
+    </nav>
+
+    <!--Slide captions displayed here-->
+    <div id="slidecaption"></div>
+
+    <script id="videoframe" type="text/html">
+        <iframe src="https://vimeo.com/couchmode/user2464505/videos/sort:date/{{id}}?wmode=transparent"
+                width="100%" height="100%" frameborder="0" wmode="transparent"></iframe>
+    </script>
+<!-- End Document
+================================================== -->
+</body>
+</html>

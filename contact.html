@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en, fr"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en, fr"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en, fr"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en, fr"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Vampiroscope</title>
+    <meta name="author" content="Christophe Desguez, Eidolon Labs">
+
+	<meta name="description" lang="en" content="Web site of photograph, web designer Aleiter Crowlaid, aka Christophe Desguez">
+
+    <meta name="keywords" content="photography">
+    <meta name="robots" content="noindex, nofollow">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vampir.css">
+
+    <!-- JS SCRIPT LOADER see http://headjs.com/ -->
+    <script src="js/head.load.min.js"></script>
+
+    <script>
+        /* Load scripts in paralell but execute them sequentially */
+        head.js("http://code.jquery.com/jquery-1.7.1.min.js",
+                "js/jquery.backstretch.min.js",
+                "http://wufoo.com/scripts/embed/form.js",
+                function loaded() {
+                    $.backstretch("images/vampir-logo.png", {speed: 500});
+
+                    var z7x3x5;
+
+                    try {
+                        z7x3x5 = new WufooForm();
+                        z7x3x5.initialize({
+                            'userName':'acrowlaid',
+                            'formHash':'z7x3x5',
+                            'autoResize':true,
+                            'height':'436',
+                            'async':true,
+                            'header':'show'});
+                        z7x3x5.display();
+                    } catch (e) {
+                        console.error(e);
+                    }
+
+                });
+    </script>
+
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+    <style>
+        #wufoo-z7x3x5 {
+            margin: 1em 20%;
+        }
+    </style>
+</head>
+
+<body>
+
+	<!-- Primary Page Layout
+	================================================== -->
+    <header id="header">
+        <hgroup id="title">
+            <h1>VAMPIROSCOPE</h1>
+            <h2>the Photographic Works of Aleister Crowlaid</h2>
+        </hgroup>
+        <nav id="main">
+
+            <a href="index.html">Galleries</a>
+            <a href="about.html">Curriculum Vitae</a>
+            <a class="selected" href="contact.html">Contact</a>
+
+        </nav>
+    </header>
+
+    <div id="wufoo-z7x3x5">
+    </div>
+<!-- End Document
+================================================== -->
+</body>
+</html>
