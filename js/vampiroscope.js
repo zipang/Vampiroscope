@@ -18,7 +18,7 @@ var video; // the current video (if running)
 
 // Display our Vampir logo in a few moments
 setTimeout(function() {
-    $.backstretch("images/vampir-logo.png", {speed: 500, stretchX: true});
+    $.backstretch("images/vampir-logo.png", {speed: 500, stretchMode: "detect"});
 }, 200);
 
 
