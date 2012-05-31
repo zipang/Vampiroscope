@@ -29,8 +29,12 @@
 	<script src="js/head.load.min.js"></script>
 
 	<script>
-		/* Load scripts in parallel but execute them sequentially */
-		head.js("http://code.jquery.com/jquery-1.7.1.min.js",
+        var _gaq = [['_setAccount', 'UA-32282286-1'], ['_trackPageview']];
+
+        /* Load scripts in paralell but execute them sequentially */
+        head.js("http://www.google-analytics.com/ga.js",
+                "http://code.jquery.com/jquery-1.7.1.min.js",
+
 				"js/jquery.backstretch.min.js",
 				"http://wufoo.com/scripts/embed/form.js",
 				function loaded() {

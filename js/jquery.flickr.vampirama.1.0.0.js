@@ -1,5 +1,6 @@
 /*
- Vampirama - A Diaporama extracted from Flickr sets
+ Vampirama - A Diaporama of images extracted from Flickr sets
+ Based on Backstretch 1.3 : https://github.com/zipang/jquery-backstretch
 
  Usage :
 
@@ -7,8 +8,9 @@
     vmp.start("set_id");
     vmp.stop({restore: "image_url"});
 
-    ELRIC & CHRISTOPHE & MAYUKO
-             2012
+ Author : Christophe Desguez
+ Web site : http://eidolon-labs.com
+
  */
 
 var Vampirama = function(options) {
