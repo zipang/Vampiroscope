@@ -20,13 +20,12 @@ $(function onload() {
     var vampirama; // the current running diaporama
     var video; // the current video (if running)
 
-// Display our Vampir logo in a few moments
+    // Display our Vampir logo in a few moments
     setTimeout(function () {
-        $.backstretch("images/vampir-logo.png", {speed:1000, stretchMode:"detect"});
+        $.backstretch("images/vampir-logo.png", {speed:1000, stretchMode:"adapt"});
     }, 200);
 
-
-// Preload each diaporama refered by the menu links (a[href])
+    // Preload each diaporama refered by the menu links (a[href])
     $("#menu a.diaporama").each(function (i, anchor) {
         var $a = $(anchor), setId = vampirsets[$a.attr("href")];
         if (setId) $a.data("diapo", new Vampirama({api_key:"ef8c4448373a66b477d0a3ffe745edae", flickrSet:setId, transition:1000}));
@@ -41,7 +40,7 @@ $(function onload() {
     var playpause = function () {
         if (vampirama) vampirama.playpause();
     };
-// Register keyboard events to control play/pause of the diaporamas
+    // Register keyboard events to control play/pause of the diaporamas
     $(document).bind('keydown', 'right', next);
     $(document).bind('keydown', 'left', previous);
     $(document).bind('keydown', 'space', playpause);
