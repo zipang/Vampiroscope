@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en, fr"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en, fr"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en, fr"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en, fr"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Vampiroscope</title>
+    <meta name="author" content="Christophe Desguez, Eidolon Labs">
+
+	<meta name="description" lang="en" content="Web site of photograph, web designer Aleister Crowlaid, aka Christophe Desguez">
+
+    <meta name="keywords" content="photography">
+
+    <!-- Tumblr variables
+   ================================================== -->
+    <meta name="text:Disqus Shortname" content="" />
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- INLINE CSS : base + vampir (for the Tumblr Theme)
+  ================================================== -->
+	<style type="text/css">
+    /*
+    * Skeleton V1.1
+    * Copyright 2011, Dave Gamache
+    * www.getskeleton.com
+    * Free to use under the MIT license.
+    * http://www.opensource.org/licenses/mit-license.php
+    * 8/17/2011
+    */
+
+        /* #Reset & Basics (Inspired by E. Meyers)
+       ================================================== */
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+        body { line-height: 1; }
+        ol, ul { list-style: none; }
+        blockquote, q { quotes: none; }
+        blockquote:before, blockquote:after,
+        q:before, q:after { content: ''; content: none; }
+        table { border-collapse: collapse; border-spacing: 0; }
+
+        /* #Basic Styles
+       ================================================== */
+        body {
+            background: black;
+            font: 16px/21px "Georgia", "Times New Roman", serif;
+            color: #f5f5f5;
+            -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* #Typography
+       ================================================== */
+        h1, h2, h3, h4, h5, h6 {
+            color: #181818;
+            font-family: "Georgia", "Times New Roman", serif;
+            font-weight: normal; }
+        h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+        h1 { font-size: 46px; line-height: 50px; margin-bottom: 14px;}
+        h2 { font-size: 35px; line-height: 40px; margin-bottom: 10px; }
+        h3 { font-size: 28px; line-height: 34px; margin-bottom: 8px; }
+        h4 { font-size: 21px; line-height: 30px; margin-bottom: 4px; }
+        h5 { font-size: 17px; line-height: 24px; }
+        h6 { font-size: 14px; line-height: 21px; }
+        .subheader { color: #777; }
+
+        p { margin: 0 0 20px 0; }
+        p img { margin: 0; }
+        p.lead { font-size: 21px; line-height: 27px; color: #777;  }
+
+        em { font-style: italic; }
+        strong { font-weight: bold; color: #333; }
+        small { font-size: 80%; }
+
+        /*	Blockquotes  */
+        blockquote, blockquote p { font-size: 17px; line-height: 24px; color: #777; font-style: italic; }
+        blockquote { margin: 0 0 20px; padding: 9px 20px 0 19px; border-left: 1px solid #ddd; }
+        blockquote cite { display: block; font-size: 12px; color: #555; }
+        blockquote cite:before { content: "\2014 \0020"; }
+        blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { color: #555; }
+
+        hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 10px 0 30px; height: 0; }
+
+
+        /* #Links
+       ================================================== */
+        a { outline: 0; }
+        p a, p a:visited { line-height: inherit; }
+
+        /* #Images
+       ================================================== */
+        img {border: 2em solid black; }
+        img.scale-with-grid { max-width: 100%; height: auto; }
+
+
+
+    @font-face {
+        font-family: 'CreatureRegular';
+        src: url('http://vampiroscope.com/fonts/creature/creature-wf.eot');
+        src: url('http://vampiroscope.com/fonts/creature/creature-wf.eot?#iefix') format('embedded-opentype'),
+        url('http://vampiroscope.com/fonts/creature/creature-wf.woff') format('woff'),
+        url('http://vampiroscope.com/fonts/creature/creature-wf.ttf') format('truetype'),
+        url('http://vampiroscope.com/fonts/creature/creature-wf.svg#CreatureRegular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'PlasticNo28Regular';
+        src: url('http://vampiroscope.com/fonts/plastic/plastic-wf.eot');
+        src: url('http://vampiroscope.com/fonts/plastic/plastic-wf.eot?#iefix') format('embedded-opentype'),
+        url('http://vampiroscope.com/fonts/plastic/plastic-wf.woff') format('woff'),
+        url('http://vampiroscope.com/fonts/plastic/plastic-wf.ttf') format('truetype'),
+        url('http://vampiroscope.com/fonts/plastic/plastic-wf.svg#PlasticNo28Regular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        height: 100%;
+
+    }
+
+    header {
+        margin-top: 5px;
+        padding: 20px 0;
+        background-image: url(http://vampiroscope.com/images/leather-bckgd-tile.png);
+        background-repeat: repeat-x;
+        border-top: 2px solid #758334;
+        border-bottom: 2px solid #758334;
+    }
+    header * {
+        font-family: 'CreatureRegular';
+    }
+    header h1 { color: #9F190E; font-size: 64px; line-height: 70px; margin-bottom: 14px;}
+    header h2, header a { color: #2A4549; font-size: 48px; line-height: 50px; margin-bottom: 10px; }
+
+    header:after, #main:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+    #title {
+        float: left; display: inline;
+        margin-left: 2em;
+        width: 30%;
+    }
+    #main {
+        float: left; display: inline;
+        padding-top: 84px;
+        margin-left: 2em;
+        font-size: 28px; line-height: 34px;
+    }
+    #main a, .post a {
+        display: inline;
+        margin-right: 2em;
+        text-decoration: none;
+        color: #2A4549;
+    }
+    #main a.selected, #main a:hover, #main a:focus {
+        text-decoration: underline;
+        color: #1A4563;
+    }
+
+    .post a.selected, .post a:hover, .post a:focus {
+        text-decoration: underline;
+        color: #1A4563;
+    }
+
+    header.hidden h2 { opacity: 0; }
+    header.hidden nav#main { display: none; }
+    header.hidden { background-image: none; border: none; margin: 7px 0 2px;}
+
+    @media only screen and (max-width: 1200px) {
+
+        #main {
+            padding-top: 0;
+        }
+        #main a {
+            display: block;
+            margin-right: 10px;
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+        #title {
+            width: 50%;
+        }
+    }
+
+    .post {
+        margin: 2em;
+        padding: 2em;
+        background-color: rgba(255,255,255,0.1);
+        border-radius: 2em;
+    }
+
+
+    </style>
+
+    <!-- JS SCRIPT LOADER see http://headjs.com/ -->
+    <script src="http://vampiroscope.com/js/head.load.min.js"></script>
+
+    <script>
+        var _gaq = [['_setAccount', 'UA-32282286-1'], ['_trackPageview']];
+
+        /* Load scripts in paralell but execute them sequentially */
+        head.js("http://www.google-analytics.com/ga.js",
+                "http://code.jquery.com/jquery-1.7.1.min.js",
+
+                "http://vampiroscope.com/js/jquery.backstretch.min.js",
+                function loaded() {
+                    $.backstretch("http://vampiroscope.com/images/vampir-logo.png", {speed: 500});
+                });
+    </script>
+
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="http://vampiroscope.com/images/favicon.ico">
+	<link rel="apple-touch-icon" href="http://vampiroscope.com/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://vampiroscope.com/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://vampiroscope.com/images/apple-touch-icon-114x114.png">
+
+</head>
+
+<body>
+
+	<!-- Header
+	================================================== -->
+    <header id="header">
+        <hgroup id="title">
+            <h1>VAMPIROSCOPE</h1>
+            <h2>the Photographic Works of Aleister Crowlaid</h2>
+        </hgroup>
+        <nav id="main">
+
+            <a href="http://vampiroscope.com/index.html">Galleries</a>
+            <a class="selected" href="#">Blog</a>
+            <a href="http://vampiroscope.com/contact.html">Contact</a>
+
+        </nav>
+    </header>
+
+    <!-- Blog posts
+     ================================================== -->
+
+    {block:Posts}
+    <div class="post {block:PermalinkPage}Single{/block:PermalinkPage} {TagsAsClasses}">
+
+    {block:Text}
+    <div class="article">
+        {block:Title}
+        <a href="{Permalink}" class="Title">{Title}</a>
+        {/block:Title}
+
+        <div class="postBody">{Body}</div>
+    </div>
+    {/block:Text}
+
+    {block:Photo}
+    <div class="photo">
+        <div class="ThePhoto">
+            {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
+        </div>
+        {block:Caption}
+        <div class="postBody">{Caption}</div>
+        {/block:Caption}
+    </div>
+    {/block:Photo}
+
+    {block:Photoset}
+    <div class="photoset">
+        {Photoset-500}
+        {block:Caption}
+        <div class="postBody">{Caption}</div>
+        {/block:Caption}
+    </div>
+    {/block:Photoset}
+
+    {block:Quote}
+    <div class="quote">
+        <div class="TheQuote {Length}">{Quote}</div>
+        <div class="QuoteSource">{Source}</div>
+    </div>
+    {/block:Quote}
+
+    {block:Link}
+    <div class="link">
+        <a href="{URL}" target="{Target}" class="TheLink">{Name}</a>
+        {block:Description}
+        <div class="postBody">
+            {Description}
+        </div>
+        {/block:Description}
+    </div>
+    {/block:Link}
+
+
+    {block:Video}
+    <div class="video">
+        {Video-500}
+        <div class="postBody">
+            {Caption}
+        </div>
+    </div>
+    {/block:Video}
+
+    {block:Answer}
+    <div class="answer">
+        <div class="QuestionBox">
+            <div class="TheAsker">
+                <div class="AskerPhoto"><img src="{AskerPortraitURL-96}" width="96" height="96"/></div>
+                <span class="AskerName">{Asker}</span>
+            </div>
+            <div class="Asks">asks:</div>
+            <div class="TheQuestion">{Question}</div>
+        </div>
+
+        <div class="TheAnswer PostBody">{Answer}</div>
+    </div>
+    {/block:Answer}
+
+    <!-- Post Bottom -->
+    <div class="bottom">
+        <div class="reblog">
+            {block:ContentSource}
+            <span>{lang:Source}:</span>
+            <a href="{SourceURL}">
+                {block:SourceLogo}
+                <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                {/block:SourceLogo}
+                {block:NoSourceLogo}
+                {SourceTitle}
+                {/block:NoSourceLogo}
+            </a>
+            {/block:ContentSource}
+
+            <!-- {block:RebloggedFrom}
+                               /{lang:Reblogged from ReblogParentTitle 2}
+                           {/block:RebloggedFrom} -->
+        </div>
+
+        {block:Text}
+        {block:Date}
+        {/block:Date}
+        {/block:Text}
+
+        {block:Photo}
+        {block:IfShowHighResPhotoLinks}
+        {block:HighRes}
+            <span class="hires">
+                <a href="{PhotoURL-HighRes}" class="HighResLink" style="text-transform:uppercase;">{lang:High-res}</a>
+            </span>
+        {/block:HighRes}
+        {/block:IfShowHighResPhotoLinks}
+        {/block:Photo}
+
+        {block:IfShowNoteCount}
+        {block:NoteCount}
+            <span class="Notes">
+                <a href="{Permalink}#Notes">{lang:Notes}: {NoteCount}</a>
+            </span>
+        {/block:NoteCount}
+        {/block:IfShowNoteCount}
+
+        {block:IfDisqusShortname}
+            <span class="Comments">
+                <a href="{Permalink}#disqus_thread">{lang:View comments}</a>
+            </span>
+        {/block:IfDisqusShortname}
+
+        {block:Date}
+            <span class="Permalink">
+                <a href="{Permalink}" class="Time">{MonthNumber}/{DayOfMonth}/{ShortYear} &mdash; {12Hour}:{Minutes}{AmPm}</a>
+            </span>
+
+            {block:IfShowShortURL}
+                <span class="ShortUrl">
+                    <span>{lang:Short URL}</span>: <a href="{ShortURL}">{ShortURL}</a>
+                </span>
+            {block:IfShowShortURL}
+        {block:Date}
+
+        {block:IfShowTags}
+        {block:HasTags}
+            <span class="Tags">
+                <span>{lang:Filed under}</span>:
+                {block:Tags}
+                    <a href="{TagURL}">#{Tag}</a>&nbsp;
+                {block:Tags}
+            </span>
+        {/block:HasTags}
+        {/block:IfShowTags}
+
+    </div>
+    <!-- /Post Bottom -->
+
+    {block:IfShowNotesOnPermalinkPage}
+    {block:PermalinkPage}
+        <span class="PermaPageNotes">
+            <a name="Notes" class="NotesAnchor">&#160;</a>
+            {PostNotes}
+        </span>
+    {/block:PermalinkPage}
+    {/block:IfShowNotesOnPermalinkPage}
+
+
+    {block:IfDisqusShortname}{/block:IfDisqusShortname}
+
+    {block:PermalinkPage}
+    {block:IfDisqusShortname}
+    {block:Permalink}
+    <div class="notecontainer" style="margin: 20px 0 0 0; padding: 1px 10px 10px 0px;">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
+        <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">{lang:View the discussion thread}</a></noscript>
+    </div>
+
+    {/block:Permalink}
+    {/block:IfDisqusShortname}
+    {/block:PermalinkPage}
+
+    </div>
+    {/block:Posts}
+
+<!-- End Document
+================================================== -->
+</body>
+</html>
