@@ -57,6 +57,7 @@ header:after, #main:after { content: "\0020"; display: block; height: 0; clear: 
     display: inline;
     margin-right: 2em;
     text-decoration: none;
+    color: #2A4549;
 }
 #main a.selected, #main a:hover, #main a:focus {
     text-decoration: underline;

@@ -14,7 +14,6 @@
 	<meta name="description" lang="en" content="Web site of photograph, web designer Aleister Crowlaid, aka Christophe Desguez">
 
     <meta name="keywords" content="photography">
-    <meta name="robots" content="noindex, nofollow">
 
 	<!-- Mobile Specific Metas
   ================================================== -->
@@ -30,15 +29,29 @@
 
     <script>
         var _gaq = [['_setAccount', 'UA-32282286-1'], ['_trackPageview']];
+        var switchTo5x=true;
 
         /* Load scripts in paralell but execute them sequentially */
         head.js("http://www.google-analytics.com/ga.js",
                 "http://code.jquery.com/jquery-1.7.1.min.js",
+                "http://w.sharethis.com/button/buttons.js",
+                "http://s.sharethis.com/loader.js",
                 "js/jquery.backstretch.min.js",
                 "js/jquery.flickr.vampirama.1.0.0.js",
                 "js/jquery.hotkeys.js",
                 "js/ICanHaz.min.js",
-                "js/vampiroscope.js");
+                "js/vampiroscope.js",
+                function() {
+                    // Display the shareThis buttons on the right..
+                    if (sharethis) {
+                        var st_hover_widget = new sharethis.widgets.hoverbuttons({
+                            "publisher":"85c8dbb2-e69a-4476-a713-4784353629c7",
+                            "position":"right",
+                            "ad":{ "visible":false, "openDelay":5, "closeDelay":0},
+                            "chicklets":{ "items":["sharethis", "tumblr", "wordpress", "googleplus", "digg", "delicious", "stumbleupon"]}
+                        });
+                    }
+                });
     </script>
 
 	<!-- Favicons
