@@ -10,11 +10,19 @@
 $(function onload() {
 
     var vampirsets = { // index the sets by their keywords
-        "#punkrockcity":"72157629532299982",
-        "#citylights":"72157629219615600",
-        "#pagode":"72157627781608636",
-        "#dreams":"72157629533102062",
-        "#nightride":"72157629917483407"
+        "#punkrockcity": {set: "72157629532299982"},
+        "#citylights": {set: "72157629219615600"},
+        "#pagode": {set: "72157627781608636"},
+        "#dreams": {set: "72157629533102062"},
+        "#nightride": {set: "72157629917483407"},
+
+        "#bedrooms": {gallery: "1526666-72157629543719549"},
+        "#heroins": {gallery: "1526666-72157629179103784"},
+        "#elsewhere": {gallery: "1526666-72157629473504865"},
+        "#elsewhere2": {gallery: "1526666-72157629118463060"},
+
+        "#favorites": {favorites: "1526666-72157629118463060"},
+
     };
 
     var vampirama; // the current running diaporama
@@ -27,8 +35,11 @@ $(function onload() {
 
     // Preload each diaporama refered by the menu links (a[href])
     $("#menu a.diaporama").each(function (i, anchor) {
-        var $a = $(anchor), setId = vampirsets[$a.attr("href")];
-        if (setId) $a.data("diapo", new Vampirama({api_key:"ef8c4448373a66b477d0a3ffe745edae", flickrSet:setId, transition:1000}));
+        var $a = $(anchor), source = $.extend({
+            api_key:"ef8c4448373a66b477d0a3ffe745edae", transition:1000
+        }, vampirsets[$a.attr("href")]);
+        // store the preloaded vampirama object on our link
+        $a.data("diapo", new Vampirama(source));
     });
 
     var next = function () {

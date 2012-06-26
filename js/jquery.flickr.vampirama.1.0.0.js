@@ -12,7 +12,6 @@
  Web site : http://eidolon-labs.com
 
  */
-
 var Vampirama = function(options) {
 
     // Store our self reference
@@ -34,18 +33,36 @@ var Vampirama = function(options) {
         if (!opt.api_key) {
             throw "You must provide your own Flickr API key to use this plugin !";
         }
+        if (!(opt.set || opt.gallery || opt.favorites)) {
+            throw "Unknown source param for flickr. Supported params are :\n"
+                + "'set', 'gallery', 'favorites' with their value : set_id, gallery_id, user_id.";
+        }
+        return opt;
     };
 
     // Build the response structure from a Flickr set
-    var getFlickrSet = function(setId, apiKey, callback) {
+    var retrieveImagesData = function(params, callback) {
 
-        var flickURL = "http://api.flickr.com/services/rest?format=json&method=flickr.photosets.getPhotos"
-            + "&api_key=" + apiKey + "&photoset_id=" + setId + "&jsoncallback=?";
+        var flickURL;
 
-        var retrieveData = function(data) {
-            var result = [];
+        if (params.set) {
+            flickURL = "http://api.flickr.com/services/rest?format=json&method=flickr.photosets.getPhotos"
+                + "&api_key=" + params.api_key + "&photoset_id=" + params.set + "&jsoncallback=?";
 
-            $.each(data.photoset.photo, function(i, photo) {
+        } else if (params.gallery) {
+            flickURL = "http://api.flickr.com/services/rest?format=json&method=flickr.galleries.getPhotos"
+                + "&api_key=" + params.api_key + "&gallery_id=" + params.gallery + "&jsoncallback=?";
+
+        } else if (params.favorites) {
+            flickURL = "http://api.flickr.com/services/rest?format=json&method=flickr.favorites.getList"
+                + "&api_key=" + params.api_key + "&user_id=" + params.favorites + "&jsoncallback=?";
+
+        }
+
+        var buildData = function(data) { // build a light representations
+            var result = [], photos = (data.photos) ? data.photos.photo : data.photoset.photo;
+
+            $.each(photos, function(i, photo) {
                 var baseURL = "http://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret;
 
                 result.push({
@@ -60,7 +77,7 @@ var Vampirama = function(options) {
 
         // Ajax call
         $.getJSON(flickURL).success(function(data) {
-            callback(retrieveData(data));
+            callback(buildData(data));
         }).error(function(err) {
             console.err(err);
         });
@@ -88,16 +105,17 @@ var Vampirama = function(options) {
     /* == Public methods (all are chainable) == */
 
     // Load the slides array
-    this.load = function(setId, autostart) {
+    this.load = function () {
+        var options = self.options;
 
-        getFlickrSet(setId, self.options.api_key, function(data) {
+        retrieveImagesData(options, function(data) {
             initSlides(data);
-            if (autostart) self.start();
+            if (options.autostart) self.start();
         });
         return self;
     };
 
-    this.start = function() {
+    this.start = function () {
         if (initialized()) {
             self.isRunning = true;
             self.next();
@@ -105,36 +123,34 @@ var Vampirama = function(options) {
         return self;
     }
 
-    this.stop = function(restore) {
+    this.stop = function (restore) {
         clearTimeout(self.nextTransition);
         self.isRunning = false;
         if (restore) $.backstretch(restore, {speed: self.options.transition});
         return self;
     };
 
-    this.next = function() {
+    this.next = function () {
         self.index = ((self.index + 1) % self.slideCount);
         console.log("Displaying image #" + self.index + " : " + self.slides[self.index].url);
         $.backstretch(self.slides[self.index].url, {speed: self.options.transition}, transition);
         return self;
     };
-    this.prev = function() {
+    this.prev = function () {
         self.index = (self.index > 0) ? (self.index - 1) : (self.slideCount - 1);
         $.backstretch(self.slides[self.index].url, {speed: self.options.transition});
         return self;
     };
-    this.playpause = function() {
+    this.playpause = function () {
         return (self.isRunning) ? self.stop() : self.start();
     };
 
     /*
      * Initialization
      */
-    checkOptions(options);
+    this.options = $.extend({}, defaults, checkOptions(options));
 
-    this.options = $.extend({}, defaults, options);
-
-    if (this.options.flickrSet) this.load(this.options.flickrSet, this.options.autostart);
+    this.load();
 
 };
 
